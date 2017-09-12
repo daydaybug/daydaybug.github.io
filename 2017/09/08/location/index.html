@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Hello world</title>
+  <title>百度地图定位并输出地点 | Hello world</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="最近的项目中有个需求就是要获取的用户的实时位置，还要在地图上展示。 一开始的想法是用H5的定位方法getCurrentPosition()进行定位，获取到当前位置的经纬度，然后在通过经纬度显示在地图上，后来经过测试H5定位在IOS上并不好用，后来各种goole，百度才知道， WebKit下的网页，如果是非HTTPS，将无法使用LBS功能，也就是无法定位到用户的具体位置。（惊了个呆！） 后来看百度地">
+<meta name="keywords" content="map,location">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/09/07/hello-world/index.html">
+<meta property="og:title" content="百度地图定位并输出地点">
+<meta property="og:url" content="http://yoursite.com/2017/09/08/location/index.html">
 <meta property="og:site_name" content="Hello world">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="最近的项目中有个需求就是要获取的用户的实时位置，还要在地图上展示。 一开始的想法是用H5的定位方法getCurrentPosition()进行定位，获取到当前位置的经纬度，然后在通过经纬度显示在地图上，后来经过测试H5定位在IOS上并不好用，后来各种goole，百度才知道， WebKit下的网页，如果是非HTTPS，将无法使用LBS功能，也就是无法定位到用户的具体位置。（惊了个呆！） 后来看百度地">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T07:16:23.410Z">
+<meta property="og:image" content="http://yoursite.com/images/map.png">
+<meta property="og:updated_time" content="2017-09-12T03:41:00.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="百度地图定位并输出地点">
+<meta name="twitter:description" content="最近的项目中有个需求就是要获取的用户的实时位置，还要在地图上展示。 一开始的想法是用H5的定位方法getCurrentPosition()进行定位，获取到当前位置的经纬度，然后在通过经纬度显示在地图上，后来经过测试H5定位在IOS上并不好用，后来各种goole，百度才知道， WebKit下的网页，如果是非HTTPS，将无法使用LBS功能，也就是无法定位到用户的具体位置。（惊了个呆！） 后来看百度地">
+<meta name="twitter:image" content="http://yoursite.com/images/map.png">
   
     <link rel="alternative" href="/atom.xml" title="Hello world" type="application/atom+xml">
   
@@ -152,36 +155,126 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-location" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      百度地图定位并输出地点
     </h1>
   
 
         
-        <a href="/2017/09/07/hello-world/" class="archive-article-date">
-  	<time datetime="2017-09-07T07:16:23.410Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
+        <a href="/2017/09/08/location/" class="archive-article-date">
+  	<time datetime="2017-09-08T09:17:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>最近的项目中有个需求就是要获取的用户的实时位置，还要在地图上展示。</p>
+<p>一开始的想法是用<a href="http://www.w3school.com.cn/html5/html_5_geolocation.asp" target="_blank" rel="external">H5的定位方法getCurrentPosition()</a>进行定位，获取到当前位置的经纬度，然后在通过经纬度显示在地图上，后来经过测试H5定位在IOS上并不好用，后来各种goole，百度才知道， WebKit下的网页，如果是非HTTPS，将无法使用LBS功能，也就是无法定位到用户的具体位置。（惊了个呆！）</p>
+<p>后来看百度地图的API发现百度地图有自己的定位方法，经测试支持http协议，</p>
+<h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><p>效果图如下</p>
+<a id="more"></a>
+<p><img src="/images/map.png" alt="MAP"></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p>下面贴代码</p>
+<p>注意！！（敲黑板），引入百度地图API的script标签中的##ak##请换成自己申请的ak，<a href="https://jingyan.baidu.com/article/363872eccda8286e4aa16f4e.html" target="_blank" rel="external">百度地图ak申请方法</a></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        #your-location{
+            width: 200px;
+            height:30px;
+            margin: 0 auto;
+            color: #fff;
+            border :1px solid #ccc;
+            background: #999;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 30px;
+        }
+        #allmap{
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+        #click{
+            width: 100px;
+            height: 40px;
+            background: #999;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;your-location&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;allmap&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;click&quot;&gt;click&lt;/div&gt;
+&lt;/body&gt;
+&lt;!-- 引入百度地图API功能 --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.baidu.com/api?v=2.0&amp;ak=你申请的ak&quot;&gt;&lt;/script&gt;
+&lt;!-- 记得换上你的ak --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var btn = document.getElementById(&apos;click&apos;);
+    var yourLocation = document.getElementById(&apos;your-location&apos;);
+    //创建Map实例
+    var map = new BMap.Map(&quot;allmap&quot;);
+    //初始化地图,设置中心点坐标和地图级别
+    var point = new BMap.Point(116.331398,39.897445); 
+    map.centerAndZoom(point,12);
+    //开启鼠标滚轮缩放
+    map.enableScrollWheelZoom(true); 
+    // 创建地理编码实例  
+    var myGeo = new BMap.Geocoder();
+    btn.onclick=function(){   
+        //浏览器定位获取当前经纬度
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function(r){
+            if(this.getStatus() == BMAP_STATUS_SUCCESS){
+                // 添加标记
+                var mk = new BMap.Marker(r.point);
+                map.addOverlay(mk);
+                // 地图平滑移动至新中心点
+                map.panTo(r.point);
 
+                // 根据坐标得到地址描述
+                myGeo.getLocation(r.point, function(result){      
+                    if (result){  
+                        yourLocation.innerHTML=result.address;
+                    }      
+                });
+            }
+            else {
+                alert(&apos;failed&apos;+this.getStatus());
+            }        
+        },{enableHighAccuracy: true})
+        //关于状态码
+        //BMAP_STATUS_SUCCESS    检索成功。对应数值“0”。
+        //BMAP_STATUS_CITY_LIST    城市列表。对应数值“1”。
+        //BMAP_STATUS_UNKNOWN_LOCATION    位置结果未知。对应数值“2”。
+        //BMAP_STATUS_UNKNOWN_ROUTE    导航结果未知。对应数值“3”。
+        //BMAP_STATUS_INVALID_KEY    非法密钥。对应数值“4”。
+        //BMAP_STATUS_INVALID_REQUEST    非法请求。对应数值“5”。
+        //BMAP_STATUS_PERMISSION_DENIED    没有权限。对应数值“6”。(自 1.1 新增)
+        //BMAP_STATUS_SERVICE_UNAVAILABLE    服务不可用。对应数值“7”。(自 1.1 新增)
+        //BMAP_STATUS_TIMEOUT    超时。对应数值“8”。(自 1.1 新增)
+    }
+
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
       
 
       
@@ -189,7 +282,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">map</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">location</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/javascript//" class="article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -202,15 +321,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/08/location/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          百度地图定位并输出地点
-        
-      </div>
-    </a>
   
+    <a href="/2017/09/07/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -235,7 +350,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Demo"><span class="toc-number">1.</span> <span class="toc-text">Demo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code"><span class="toc-number">2.</span> <span class="toc-text">Code</span></a></li></ol>
                     </div>
                 </span>
             </div>
